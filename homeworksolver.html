@@ -32,16 +32,24 @@
   const calculateButton = document.getElementById('calc');
   const clearButton = document.getElementById('clear')
 
-  function calculateArea(num1, num2) {
-    let Area = num1 * num2;
-    return;
-  }
+  /* First after entering the two numbers to be calculated we want the calculate button
+  to retrieve those two numbers and then add them
+   */
 
+  function calculateArea(num1, num2) {
+    return num1 * num2;
+  }
   calculateButton.addEventListener('click', function(e){
-    let width = +width.value;
-    let length = +length.value;
+    let widthA = +width.value;
+    let lengthA = +length.value;
+
+    let area = calculateArea(widthA, lengthA)
+    ans.textContent = 'The area of your rectangle is ' + area + '.';
+
 
   })
+
+
   clearButton.addEventListener('click', function(e){
     width.value = "";
     length.value = "";
