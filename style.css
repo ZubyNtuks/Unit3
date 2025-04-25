@@ -57,6 +57,10 @@ section header{
     gap: 16px;
 }
 
+.img{
+    max-width: 50px;
+    max-height: 50px;
+}
 
 .container{
     max-width: 1300px;

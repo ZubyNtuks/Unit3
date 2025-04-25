@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Avatar Picker!</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    <h1>HUNTER X HUNTER Avatar Picker!</h1>
+    <img src="https://www.kindpng.com/picc/m/98-984331_hunter-x-hunter-
+    gon-freecss-png-transparent-png.png" style="width = 50px; height = 60px;">
+    <div class="row">
+      <h3>Background</h3>
+      <button id="1">RED</button>
+      <button id="2">GREEN</button>
+      <button id="3">BLUE</button>
+      <button id="7">ORANGE</button>
+      <button id="8">MAGENTA</button>
+      <button id="9">YELLOW</button>
+    </div>
+    <div class="row">
+      <h3>Text</h3>
+      <button id="4">PINK</button>
+      <button id="5">TEAL</button>
+      <button id="6">PURPLE</button>
+      <button id="10">HOTPINK</button>
+      <button id="11">GREENYELLOW</button>
+      <button id="12">DARKSLATEBLUE</button>
+    </div>
+    <button id="clear">CLEAR</button>
+  </div>
+</div>
+<script>
+  const content = document.querySelector('.content');
+  const red = document.getElementById('1');
+  const green = document.getElementById('2');
+  const blue = document.getElementById('3');
+  const orange = document.getElementById('7');
+  const magenta = document.getElementById('8');
+  const yellow = document.getElementById('9');
+
+  const pink = document.getElementById('4');
+  const teal = document.getElementById('5');
+  const purple = document.getElementById('6');
+  const hotpink = document.getElementById('10');
+  const greenyellow = document.getElementById('11');
+  const darkslateblue = document.getElementById('12');
+
+  const clearButton = document.getElementById('clear');
+
+  red.addEventListener('click', function(e){
+    removeBGColor();
+    content.classList.add('red');
+  });
+
+  green.addEventListener('click', function(e){
+    removeBGColor();
+    content.classList.add('green');
+  });
+
+  blue.addEventListener('click', function(e){
+    removeBGColor();
+    content.classList.add('blue');
+  });
+  orange.addEventListener('click', function(e){
+    removeBGColor();
+    content.classList.add('orange');
+  });
+
+  magenta.addEventListener('click', function(e){
+    removeBGColor();
+    content.classList.add('magenta');
+  });
+
+  yellow.addEventListener('click', function(e){
+    removeBGColor();
+    content.classList.add('yellow');
+  });
+
+  pink.addEventListener('click', function(e){
+    removeTextColor();
+    content.classList.add('pink');
+  });
+
+  teal.addEventListener('click', function(e){
+    removeTextColor();
+    content.classList.add('teal');
+  });
+
+  purple.addEventListener('click', function(e){
+    removeTextColor();
+    content.classList.add('purple');
+  });
+
+  hotpink.addEventListener('click', function(e){
+    removeTextColor();
+    content.classList.add('hotpink');
+  });
+
+  greenyellow.addEventListener('click', function(e){
+    removeTextColor();
+    content.classList.add('greenyellow');
+  });
+
+  darkslateblue.addEventListener('click', function(e){
+    removeTextColor();
+    content.classList.add('darkslateblue');
+  });
+
+  function removeBGColor(){
+    content.classList.remove('red');
+    content.classList.remove('green');
+    content.classList.remove('blue');
+    content.classList.remove('orange');
+    content.classList.remove('magenta');
+    content.classList.remove('yellow');
+  }
+
+  function removeTextColor(){
+    content.classList.remove('pink');
+    content.classList.remove('teal');
+    content.classList.remove('purple');
+    content.classList.remove('hotpink');
+    content.classList.remove('greenyellow');
+    content.classList.remove('darkslateblue');
+  }
+
+  clearButton.addEventListener('click', function(e){
+    removeTextColor();
+    removeBGColor();
+  });
+
+</script>
+</body>
+</html>
