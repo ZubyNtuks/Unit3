@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <div class="content">
+    <h3>What is this?</h3>
+    <h4>I don't want this</h4>
+  </div>
+</div>
+
+<script>
+  const content = document.querySelector('.content');
+  //Replace contents of an intel tag using innerHTML
+  content.innerHTML = '<h1 id ="lose">I love hunter x hunter</h1><h4 class="gone">I love haikyuu!</h4>';
+
+  const anime = document.createElement('h1');
+  anime.innerHTML = 'i love anime';
+  content.appendChild(anime);
+  const rat = document.createElement('h1');
+  rat.innerHTML = 'i want a rat';
+  content.appendChild(rat);
+  const trip = document.createElement('h1');
+  trip.innerHTML = 'i am going on a trip soon';
+  content.appendChild(trip);
+
+  //put this at the top in addition to existing elements
+  const food = document.createElement('h1');
+  food.innerHTML = 'I love Pizza';
+  content.insertAdjacentElement('afterend', food);
+
+  //to remove an element
+  const unwantedElement = document.querySelector('h4');
+  unwantedElement.remove();
+
+  const unwantedElement2 = document.querySelector('#lose');
+  unwantedElement2.remove();
+
+  const unwantedElement3 = document.querySelector('.gone');
+  unwantedElement3.remove();
+</script>
+</body>
+</html>

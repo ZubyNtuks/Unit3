@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello!</title>
+</head>
+<body>
+
+<div>
+    <label for="firstname">First</label>
+    <input id="firstname" name="first_name" type="text">
+</div>
+<div>
+    <label for="lastname">Last</label>
+    <input id="lastname" name="last_name" type="text">
+</div>
+<button id="button">Say Hello</button>
+<div id="mainlist"></div>
+
+
+<script>
+    const hellofirstName = document.getElementById('firstname');
+    const hellolastName = document.getElementById('lastname');
+    const button = document.getElementById('button');
+    const namelist = document.getElementById('mainlist');
+
+    button.addEventListener('click', function (e) {
+        const helloAgain = document.createElement('p');
+        let firstName = hellofirstName.value;
+        let lastname = hellolastName.value;
+        helloAgain.innerHTML = firstName + ' ' + lastname;
+        namelist.insertAdjacentElement('afterbegin', helloAgain);
+    })
+</script>
+</body>
+</html>

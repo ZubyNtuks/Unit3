@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--First we make a text input-->
+  <div>
+    <label for="item">Item</label>
+    <input id="item" name="ite_m" type="text">
+  </div>
+<!--Next a button!-->
+  <button id="button">Add Item</button>
+<!--And last! a space for our list!-->
+  <div id="list"></div>
+<!--Now that that's done we can begin with the Javascript!-->
+<script>
+// First we need to call out our elements!
+    const shoppingItem = document.getElementById('item');
+    const pressItem = document.getElementById('button');
+    const shoppingList = document.getElementById('list');
+
+// Now, we need to go over what we want our button to do
+// We want our button to add what we wrote in the item box to
+// the list... so we'll create a new element each time!
+
+    pressItem.addEventListener('click', function(e){
+        const addtoList = document.createElement('li');
+        let addItem = shoppingItem.value;
+        addtoList.innerHTML = addItem;
+        shoppingList.appendChild(addtoList);
+    })
+
+</script>
+
+</body>
+</html>
