@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Level up pets!</title>
+    <link href="3.7style.css" rel="stylesheet">
+</head>
+<body>
+
+<!--Time for the big project!-->
+
+<!--My game is a game where you can level up pets by clicking on them!
+ once you've clicked enough times... your pet will level up!
+
+ How should we do this tho... First we should plan!
+
+ What are the things we want on the page?
+
+ 1. A starting image of a baby kitten in the middle of the screen
+ 2. A score at the top
+ 3. A shop with 3 upgrades on the bottom-->
+
+<div class="content">
+    <div class="score">
+        <h1>Score =</h1> <h1 id="score">0</h1>
+    </div>
+</div>
+
+<div class="pet image">
+    <div class="image">
+        <img id="pet"  src="https://ih1.redbubble.net/image.5397081003.6528/bg,f8f8f8-flat,750x,075,f-pad,750x1000,f8f8f8.jpg" alt="kitten" width="400" height="400">
+    </div>
+</div>
+
+
+<div class="shop">
+<!--Now that the layout is let's add upgrades to the shop!-->
+    <div class="upgrades">
+        <div class="doubleclick" id="doubleclick">
+            <div class="desc">
+<!--                This div will be to say what the button does-->
+                <p>Click to upgrade to double points per click!</p>
+            </div>
+            <div class="button">
+<!--                This button will activate the upgrade!-->
+                <button id="doubleclickbutton">PLACEHOLDER POINT COST</button>
+            </div>
+        </div>
+        <div class="tripleclick" id="tripleclick">
+            <div class="desc">
+                <p>Click to upgrade to triple points per click!</p>
+            </div>
+            <div class="button">
+                <button id="tripleclickbutton">PLACEHOLDER POINT COST</button>
+            </div>
+        </div>
+        <div class="doublescore" id="douplePointsUpgrade">
+            <div class="desc">
+                <p>Click to double your points!</p>
+            </div>
+            <div class="button">
+                <button id="doublepointclickbutton">PLACEHOLDER POINT COST</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--We're done with the layout! Now we can move on to Javascript!-->
+
+<script>
+//          Let's list the things we want to do.
+//          1. We want to add to our score every time we click the pet.
+
+            let score = 0;
+            let clickValue = 1;
+            let upgrade1Cost = 50;
+            let upgrade2Cost = 100;
+            let upgrade3Cost = 200;
+            const pet = document.getElementById('pet');
+            const scoreDisplay = document.getElementById('score');
+            const image = document.getElementById('pet');
+
+            pet.addEventListener('click', function(e){
+                score += clickValue;
+                scoreDisplay.textContent = score;
+                if(score >= 1000){
+                    image.src = 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/b616fa93-25c4-46f6-bf0e-e4ce30ba1b76/dfa19sl-580fe7df-4969-4077-a36f-a34c956fb19a.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2I2MTZmYTkzLTI1YzQtNDZmNi1iZjBlLWU0Y2UzMGJhMWI3NlwvZGZhMTlzbC01ODBmZTdkZi00OTY5LTQwNzctYTM2Zi1hMzRjOTU2ZmIxOWEucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.dmxUKKh-l5gzU2w75Mq289xYWqzyXw1B8DWOm3oIIUY';
+                }
+                if(score >= 10000){
+                    image.src = 'https://cdn.shopify.com/s/files/1/0273/8080/9781/files/Transparent1440x1080cattakingaselfiephoto.png?v=1702844064';
+                }
+                if(score >= 100000){
+                    image.src = 'https://media.tenor.com/olr0tUuWI7gAAAAj/cuh-cat.gif';
+                }
+                if(score >= 1000000){
+                    image.src = 'https://media.tenor.com/GTCSlk5h3NsAAAAj/motion-cat-transparent.gif';
+                }
+            })
+
+            // 2. When we press the "Point cost: 100" button we want the score to go down
+            // by 100 ONLY if the person has 100 or more points, then we want every time we
+            // click the score should go up by double it was before!
+
+            const doubleUpgrade = document.getElementById('doubleclickbutton');
+            doubleUpgrade.textContent = `Point Cost: ${upgrade1Cost}`
+
+            doubleUpgrade.addEventListener('click', function(e){
+                if(score >= upgrade1Cost){
+                    score -= upgrade1Cost;
+                    clickValue*=2;
+                    upgrade1Cost*=5;
+                    scoreDisplay.textContent = score;
+                    doubleUpgrade.textContent = `Point Cost: ${upgrade1Cost}`
+                }
+                //Now we want it to double the amount of points we get after every click!
+            })
+
+            // Finally we want to do that same thing for all the other upgrades but with
+            // different properties!
+
+            const tripleUpgrade = document.getElementById('tripleclickbutton');
+            tripleUpgrade.textContent = `Point Cost: ${upgrade2Cost}`
+
+            tripleUpgrade.addEventListener('click', function(e){
+                if(score >= upgrade2Cost){
+                    score -= upgrade2Cost;
+                    clickValue*=3;
+                    upgrade2Cost*=5;
+                    scoreDisplay.textContent = score;
+                    tripleUpgrade.textContent = `Point Cost: ${upgrade2Cost}`
+                }
+            })
+
+            const doublePointsUpgrade = document.getElementById('doublepointclickbutton');
+            doublePointsUpgrade.textContent = `Must have over: ${upgrade3Cost} points`
+
+            doublePointsUpgrade.addEventListener('click', function(e){
+                if(score >= upgrade3Cost){
+                    score*=2;
+                    upgrade3Cost*=5;
+                    scoreDisplay.textContent = score;
+                    doublePointsUpgrade.textContent = `Must have over: ${upgrade3Cost} points`
+                }
+            })
+
+            // Now we need enact the level up pets! When the points get to a certain
+            // number we should change the picture of the pet to a different one
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+</body>
+</html>

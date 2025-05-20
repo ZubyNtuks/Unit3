@@ -1,0 +1,79 @@
+
+body {
+    background-color: #c5b0a5;
+}
+
+
+.content{
+    display: flex;
+    justify-content: center;
+}
+.score{
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    background: #8a6e5d;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+    width: 200px;
+    font-family: cursive;
+}
+
+
+.pet image {
+    display: flex;
+    justify-content: center;
+}
+.image {
+    display: flex;
+    justify-content: center;
+}
+
+
+.shop{
+    display: flex;
+    justify-content: center;
+}
+.upgrades{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 500px;
+    height: 300px;
+    gap: 25px;
+}
+.doubleclick{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding-left: 30px;
+    border-radius: 12px;
+    width:500px;
+    height:100px;
+}
+.tripleclick{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding-left: 30px;
+    border-radius: 12px;
+    width:500px;
+    height:100px;
+}
+.doublescore{
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+    background: white;
+    padding-left: 30px;
+    border-radius: 12px;
+    width:500px;
+    height:100px;
+}
+
